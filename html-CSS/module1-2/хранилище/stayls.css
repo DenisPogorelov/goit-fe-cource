@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Overlock');
+
+@keyframes rotor-right {
+    from{ transform:rotate(-225deg);}
+    to { transform: rotate(-45deg);}
+}
+
+@keyframes rotor-left {
+    from {transform: rotate(-45deg);}
+    to { transform: rotate(315deg);}
+}
+
+@keyframes rotor-tail {
+    0% {opacity: 1;}
+    99%{opacity:1;}
+    100% {opacity:0;}
+}
+
+.right, .left {
+  border: var(--orange) solid 15px;
+    height: 125px;
+    width: 125px;
+    border-radius:120px;
+  position: absolute;
+  left: 75px;
+  top: 60px;
+}
+
+.wrapper:hover .right {
+    border-top-color: transparent;
+    border-left-color: transparent;
+    transform: rotate(-45deg);
+    animation: rotor-right 1000ms linear;
+}
+
+.wrapper:hover .left {
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    transform: rotate(315deg);
+    animation: rotor-left 2000ms linear;
+}
+
+.wrapper:hover .tail {
+    background: var(--wr-color);
+    width: 80px;
+    height: 162px;
+    position:absolute;
+  left: 72px;
+  top: 57px;
+    opacity:0;
+    z-index:2;
+    animation: rotor-tail 1000ms linear;
+}
+
+
+
+.wrapper {
+    margin: 30px auto;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    position:relative;
+  font-family: 'Overlock', cursive;
+  font-size: 36px;
+  text-align: center;
+}
